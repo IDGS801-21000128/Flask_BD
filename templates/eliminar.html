@@ -6,7 +6,12 @@
 
 <div class="container">
     <div class="row">
-        <form name="sent" action="/index" id="contactForm" method="POST">
+        <form name="sent" action="/eliminar" id="contactForm" method="POST">
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    {{macros.camposNuevos(form.id, class="form-control", readonly="readonly")}}
+                </div>
+            </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     {{macros.camposNuevos(form.nombre, class="form-control")}}
@@ -24,7 +29,8 @@
             </div>
             <input type="hidden" name="csrf_token"
             value="{{csrf_token() }}">
-            <input type="submit" id="send-signup" name="signup" value="Registrar">
+            <input type="submit" class="btn btn-danger" id="eliminar" name="eliminar" value="Eliminar">
+            <a href="ABC_Completo.html" class="btn btn-success"><i class="icon-undo icon-white"></i>Cancelar</a>
         </form>
     </div>
 </div>
